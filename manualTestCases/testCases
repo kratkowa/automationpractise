@@ -1,0 +1,169 @@
+# Test cases for manual blackbox testing
+# Author: Kajetan Ziółkowski
+
+Scenariusz 1
+	Cel:
+	Weryfikacja poprawnosci zakladania konta, wraz z obsluga bledów w postacji podania nieprawidlowych danych, lub pozostawienia pustych pól.
+
+	Test 1.1 Nieprawidlowo wypelnione pole kodu pocztowego.
+
+		Stan przed przeprowadzeniem testu:
+		-Uzytkonik jest wylogowany
+		-W koszyku uzytkownika nie znajduja sie zadne zakupy
+
+		Dane testowe:
+		-Tytul: Mr.
+		-Adres email: asdf@a.com
+		-Imie: Testeusz
+		-Nazwisko: Fakeman
+		-Haslo: hassword123
+		-Data urodzenia: 12.01.1990
+		-Firma: Tesla
+		-Adres: Sweet 15/15
+		-Miasto: Home
+		-Stan: Alabama
+		-Kod pocztowy: 12345
+		-Kraj: USA
+		-Telefon komórkowy
+		-kontaktowy adres: Reims 3/3
+
+		Kroki:
+		1. Wejdz na strone glówna.
+		2. Kliknij przycisk 'Sign in'
+		3. Wypelnij pole 'Email address' w sekcji 'Create account'
+		4. Kliknij przycisk 'Create an account'
+		5. Wypelnij wszystkie pola, poza kodem pocztowym
+		6. Kliknij przycisk 'Register'
+
+		Oczekiwany efekt:
+		Rejestracja nie zostaje zakonczona. Zwrócony zostaje komunikat informujacy o koniecznosci uzupelnienia wszystkich wymaganych pól.
+
+
+		Uwagi:
+		-Na jeden adres email, konto moze zostac stworzone tylko raz.
+
+
+	Test 1.2 Poprawne wypelnienie wszystkich pól i zalozenie konta
+
+
+		Dane testowe:
+		-Tytul: Mrs.
+		-Adres email: asdfg@a.com
+		-Imie: Lucyna
+		-Nazwisko: Testova
+		-Haslo: hassword123
+		-Data urodzenia: 12.01.1991
+		-Firma: Samsung
+		-Adres: Zupa 15/15
+		-Miasto: Kipi
+		-Stan: Mississippi
+		-Kod pocztowy:  12345
+		-Kraj: USA
+		-Telefon komórkowy
+		-kontaktowy adres: Hilton 3/3
+
+		Kroki:
+		1. Wejdz na strone glówna.
+		2. Kliknij przycisk 'Sign in'
+		3. Wypelnij pole 'Email address' w sekcji 'Create account'
+		4. Kliknij przycisk 'Create an account'
+		5. Wypelnij wszystkie pola
+		6. Kliknij przycisk 'Register'
+
+
+		Oczekiwany efekt:
+		Rejestracja zostaje zakonczona. Konto zostaje utworzone w systemie.
+		Uzytkownik zostaje automatycznie zalogowany i przeniesiony do strony zarzadzania kontem.
+
+		Uwagi:
+		-Na jeden adres email, konto moze zostac stworzone tylko raz.
+
+
+Scenariusz 2.
+
+	Cel:
+	Weryfikacja poprawnosci dzialania sciezki umozliwiajacej dodanie produktu do koszyka i dokonanie zakupu.
+
+	Stan przed przeprowadzeniem testu:
+	-Uzytkonik jest wylogowany
+	-W koszyku uzytkownika nie znajduja sie zadne zakupy
+
+	Test 2.1
+
+		Kroki:
+		1. Wejdz na strone glówna.
+		2. Kliknij przycisk 'Sign in'.
+		3. Wypelnij pola 'Email address' i 'Password' w sekcji 'Already registered?'.
+		4. Przejdz na strone glówna, poprzez klikniecie w obrazek 'Your Logo'.
+		5. Dodaj do koszyka produkt z sekcji 'Best Sellers'. Wybierz opcje 'Continue Shopping. Zapisz lub zapamietaj cene danego towaru.
+		6. Dodaj do koszyka drugi produkt. Wybierz opcje 'Proceed to checkout'. Zapisz lub zapamietaj cene danego towaru.
+		7. Znajdujac sie w sekcji '1. Summary', zweryfikuj wartosc sumy obu produktow i dostawy (dostawa = $2).
+		8. W sekcji '3. Address' wybierz opcje 'Proceed to checkout'.
+		9. W sekcji '4. Shipping' zaznacz pole 'Terms of service' i wybierz opcje 'Proceed to checkout'.
+		10. W sekcji '5. Payment' zweryfikuj wartosc sumy obu produktow i dostawy. Suma powinna by rowna sumie z kroku 7.
+		11. Wybierz opcje platnosci 'Pay by bank wire'.
+		12. Kliknij przycisk 'I confirm my order'.
+		13. Zweryfikuj dane w podsumowaniu. Kwota powinna by rowna sumie z kroku 7.
+
+
+		Oczekiwany efekt:
+		Uytkownik otrzymuje dane umozliwiajace dokonanie przelewu.
+		Koszyk jest pusty.
+
+
+
+	Test 2.2
+
+		Kroki:
+		1. Wejdz na strone glówna.
+		2. Kliknij przycisk 'Sign in'.
+		3. Wypelnij pola 'Email address' i 'Password' w sekcji 'Already registered?'.
+		4. Przejdz na strone glówna, poprzez klikniecie w obrazek 'Your Logo'.
+		5. Dodaj do koszyka produkt z sekcji 'Best Sellers'. Wybierz opcje 'Continue Shopping.
+		6. Przejdz do koszyka z zakupami.
+		7. Zmniejsz liczbe wybranego produktu do 0.
+
+		Oczekiwany efekt:
+		Produkt zostaje usuniety z koszyka. Koszyk jest pusty. Wywietlona zostaje informacja 'Your shopping cart is empty.'.
+
+	Test 2.3
+
+		Kroki:
+		1. Wejdz na strone glówna.
+		2. Kliknij przycisk 'Sign in'.
+		3. Wypelnij pola 'Email address' i 'Password' w sekcji 'Already registered?'.
+		4. Przejdz na strone glówna, poprzez klikniecie w obrazek 'Your Logo'.
+		5. Dodaj do koszyka produkt z sekcji 'Best Sellers'. Wybierz opcje 'Continue Shopping.
+		6. Przejdz do koszyka z zakupami.
+		7. Nacisnij ikone kosza w sekcji danego produktu.
+
+		Oczekiwany efekt:
+		Produkt zostaje usuniety z koszyka. Koszyk jest pusty. Wywietlona zostaje informacja 'Your shopping cart is empty.'.
+
+
+
+Scenariusz 3.
+
+	Cel:
+	Weryfikacja mozliwosci wyslania wiadomoci do obslugi klienta.
+
+	Stan przed przeprowadzeniem testu:
+	-Uzytkonik jest wylogowany
+	-Test musi zostac wykonany na koncie, z ktorego dokonano zamowienia produktow.
+
+
+	Test 3.1
+
+		Kroki:
+		1. Wejdz na strone glówna.
+		2. Kliknij pole 'Contact Us'
+		3. W polu 'Subject Heading' wybierz opcje 'Customer service'
+		4. Wypenij pole 'Email address' podajac prawidlowy adres email (np.: asdfgh@a.com).
+		5. Wybierz, pierwszy od gory na rozwijanej liscie, numer zamowienia z pola 'Order reference'.
+		6. Wybierz, pierwszy od gory na rozwijanej liscie, produkt z pola 'Product'.
+		7. Wypenij pole 'Message' dowolnym ciagiem znakow.
+		8. Wyslij wiadomosc, klikajac przycisk 'Send'.
+
+
+		Oczekiwany efekt:
+		Wiadomosc zostaje wyslana. Wyswietlony zostaje komunikat 'Your message has been successfully sent to our team.'

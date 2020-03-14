@@ -1,6 +1,6 @@
 Musimy dopytać w którym miejscu piszemy kto za co odpowiadal
 
-0. Dedykacja xd
+0. Dedykacja
 
 1. Wstęp
 
@@ -11,10 +11,10 @@ Musimy dopytać w którym miejscu piszemy kto za co odpowiadal
     1.4 Testy Automatyczne (i tutaj piszemy jaka automatyzacja testów jest fajna)
 
 3. Narzędzia do testów automatycznych
-    2.1 Selenium
+    2.1 Ranorex Studio
     2.2 Cucumber
     2.3 Katalon Studio
-    2.4 Ranorex Studio
+    2.4 Selenium
     2.5 Robot Framework (i tutaj piszemy jaki RF jest fajny)
 
 4. Narzędzia ciągłej integracji i utrzymania projektu
@@ -25,7 +25,7 @@ Musimy dopytać w którym miejscu piszemy kto za co odpowiadal
     3.2 Pycharm
     3.3 Geritt
 
-5. Języki programowania wykorzystywane w automatyzacji testów
+5. Języki programowania wykorzystywane w automatyzacji testów (awaryjnie)
     4.1 Java
     4.2 C/C++
     4.3 Python (i tutaj piszemy jaki Python jest fajny)
@@ -56,4 +56,4 @@ Musimy dopytać w którym miejscu piszemy kto za co odpowiadal
 
 12. Podsumowanie
 
-13. Bibliografia
+Bibliografia

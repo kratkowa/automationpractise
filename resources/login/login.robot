@@ -2,7 +2,6 @@
 # Author: Patrycja Łukaszewicz
 
 *** Settings ***
-Documentation    Suite description
 Library  SeleniumLibrary
 
 *** Keywords ***

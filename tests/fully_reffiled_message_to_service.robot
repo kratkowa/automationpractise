@@ -1,28 +1,29 @@
 #Autor:Michał Kłonowski
 *** Settings ***
-Library  SeleniumLibrary
+#Library  SeleniumLibrary
+Resource  ../config/global.robot
+Resource  ../resources/bookmarks/contact_us.robot
 
 *** Test Cases ***
-Sending Message With Invalid Email Address
-    [Documentation]  Sending message to the service with corectly reffiled all fields
-
-    Open Browser    http://automationpractice.com/  chrome
-#Idzie do Contact Us
+Start Test
+    [Documentation]  Open browser
+    Open Browser  ${WEB_ADDRESS}  ff
+#ZNOWU TEN WARIAT 'GO TO CONTACT US' NIE DZIAŁA ;((((
     Click Link      http://automationpractice.com/index.php?controller=contact
-#Czeka aż wczyta się box [webmaster/customer] <-bez tego test nie przechodzi dalej (Sleep 2 może być alternatywą)
-    Wait Until Element Is Enabled   xpath=/html/body/div/div[2]/div/div[3]/div/form/fieldset/div[1]/div[1]/div[1]/div/select
-#wpisuje prawidłowego maila
-    Input Text      xpath=/html/body/div/div[2]/div/div[3]/div/form/fieldset/div[1]/div[1]/p[4]/input  text=xyzol@o2.pl
-#wpisuje referencje zamówienia
-    Input Text      xpath=/html/body/div/div[2]/div/div[3]/div/form/fieldset/div[1]/div[1]/div[2]/input  text=something
-#wybiera z boxa customera
-    Click Element                   xpath=/html/body/div/div[2]/div/div[3]/div/form/fieldset/div[1]/div[1]/div[1]/div/select
-    Click Element   xpath=/html/body/div/div[2]/div/div[3]/div/form/fieldset/div[1]/div[1]/div[1]/div/select/option[2]
-#wypełnia treść wiadomości
-    Input Text      xpath=/html/body/div/div[2]/div/div[3]/div/form/fieldset/div[1]/div[2]/div/textarea  text=Trescwiadomosci
-#wysyła wiadomość
-    Click Element   xpath=/html/body/div/div[2]/div/div[3]/div/form/fieldset/div[2]/button
-#sprawdza, czy jest odpowiednia informacja zwrotna
-    Page Should Contain    text=Your message has been successfully sent to our team.
-#zamyka przeglądarkę
-    #Close Browser
+
+Set Correct Values to the boxes
+    [Documentation]  Select customer service, ..set valid email and write some text in message box
+
+    Set Customer Service in Subject Heading
+    Set Correct Email Address
+    Set Text Message
+
+Sending Message
+    Send Message
+
+Check information about message status
+    Message has been sent
+
+Closing browser
+    Close Browser
+

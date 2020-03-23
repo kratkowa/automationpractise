@@ -1,0 +1,32 @@
+4. Narzędzia ciągłej integracji i utrzymania projektu
+    W tym rozdziale opisane zostały narzedzia umożliwiające ciągłą integrację, utrzymanie i poprawiające komunikację między osobami pracującymi w danym projekcie.
+    Możliwość stałego kształtowania produktu oraz dostarczania nowych wersji w łatwy i bezpieczny sposób, jest kluczowa dla długofalowego kosztu utrzymania projektu.
+    W niniejszej pracy, omówione zostały narzędzia kontroli wersji, narzędzie służące do edycji kodu - Pycharm oraz Geritt - narzędzie pomocne przy weryfikacji kodu i znajdowaniu w nim różnic.
+
+    4.1 Narzędzia kontoli wersji
+
+            Podczas pracy nad złożonym projektem, wymagającym wkładu wielu osób jednocześnie, warto korzystać z Systemów Kontroli Wersji - VCS (ang. Version Control System).
+        Jest to oprogramowanie, które zapisuje zmiany w pliku lub wielu plikach, umożliwiając wgląd do tych wersji w późniejszym czasie. [ProGit]
+        Umożliwia także tworzenie gałęzi, dzięki którym pierwotna wersja projektu pozostaje nienaruszona do czasu scalenia z gałęzią główną (and. master). Pozwala to uniknąć konfliktów w przypadku, gdy wiele osob wprowadza zmiany w tym samym obszarze kodu. Najistotniejsza jednak jest opcja szybkiego wycofywania zmian w przypadku wystąpienia usterek.
+
+
+        4.1.1 Team Foundation Server
+        4.1.2 AWS CodeCommit
+        4.1.3 GIT (i tutaj piszemy jaki git jest fajny)
+            Główną różnicą, między systemem Git, a pozostałymi VCS, jest sposób przechowywania informacji o wprowadzonych w projekie zmianach.
+        Inne VCS, w większości,  przechowują informacje o plikach w postaci listy zmian względem pojedynczych plików (przykładami takich systemów są: CVS, Subversion, Perforce, Bazaar).
+        Git natomiast, przechowuje zrzuty (ang. snapshot) całych plików w obecnej formie, oraz zrzuty w wersjach poprzednich. By bardziej sprecyzować, w przypadku, gdy pliki nie zostają zmienione w kolejnych wersjach, git nie przechowywuje powielonych kopii niezmienionego pliku, lecz odwołuje się do pliku już istniejącego.
+        Działania wykonywane w Git,w głównej mierze opierają się na zmianach plików lokalnych. Nie wymaga to pobierania informacji z innego komputera,lub połączenia do sieci, ponieważ cała historia zmian jest przechowywana na urządzeniu lokalnie.
+        Takie rozwiązanie przekłada się na bardzo szybkie działanie, niezależne od łącza internetowego.
+        Wszystkim plikom, które zostają umieszczone w systemie Git, zostaje nadana suma kontrolna, po której póżniej zostają wywoływane. Wszelkie zmiany w pliku wpływają na sumę kontrolną. Ta funkcjonalność leży u podstaw idei stworzenia systemu Git i nie pozwala na przeoczenie faktu, że zawartość pliku została zmieniona [ProGit]
+
+        W projekcie, wykonanym w ramach niniejszej pracy licencjackiej, zespół wykorzystał system Git.
+        Utworzenie repozytorium Git, powiązanie wybranego VCS z narzedziem PyCharm oraz praktyczne zastosowanie zostały poruszone w rodziałach 6 i 9.
+
+    4.2 Pycharm
+        Pycharm należy do grupy narzędzi wspomagających edycję kodu.
+        Zgodnie z danymi Top IDE index, narzędzie PyCharm zajmuje obecnie (początek drugiego kwartału dwa tysiące dwudziestego roku) piąte miejsce, pod względem popularności, spośród wszystkich IDE obecnych na rynku. Wskażnik popularności mierzony jest na podstawie liczby wyszukiwań strony umożliwiającej pobranie danego IDE, w wyszukiwarce Google.
+
+
+
+    4.3 Geritt

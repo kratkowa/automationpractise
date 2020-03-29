@@ -58,3 +58,17 @@ Order Confirmation
     sleep  2
     Element Text Should Be  xpath:/html/body/div/div[2]/div/div[3]/div/div/p/strong  Your order on My Store is complete.
     sleep  2
+
+Remove One Element From Basket
+    sleep  2
+    Click Element  xpath:/html/body/div/div[1]/header/div[3]/div/div/div[3]/div/a/b
+    sleep  2
+    Click Element  xpath:/html/body/div/div[2]/div/div[3]/div/div[2]/table/tbody/tr/td[5]/div/a[1]/span/i
+    sleep  2
+
+Verify Message Text
+    sleep  2
+    Element Text Should Be  xpath:/html/body/div/div[2]/div/div[3]/div/p  Your shopping cart is empty.
+    sleep  2
+    Element Text Should Be  xpath:/html/body/div/div[1]/header/div[3]/div/div/div[3]/div/a/span[5]  (empty)
+    sleep  2

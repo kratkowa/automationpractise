@@ -13,55 +13,56 @@ Go To Specific Menu
     Sleep  0.5s
     Element Should Be Visible  xpath=${expected_category}
 
-Click Specific Checkbox
-    [Arguments]  ${atribut_name}  ${atribut_xpath}
-    Run Keyword If  '${atribut_name}' == '${atribut_value}'  Click Element  xpath=${atribut_xpath}
-
 Set Categories Chechbox
-    [Arguments]  @{categories}
-    Click Specific Checkbox  ${categories}  top  atribut_xpath=//*[@id="layered_category_4"]
-    Click Specific Checkbox  ${categories}  dresses  atribut_xpath=//*[@id="layered_category_8"]
-    Click Specific Checkbox  ${categories}  casual dresses  atribut_xpath=//*[@id="layered_category_9"]
-    Click Specific Checkbox  ${categories}  evening dresses  atribut_xpath=//*[@id="layered_category_10"]
-    Click Specific Checkbox  ${categories}  summer dresses  atribut_xpath=//*[@id="layered_category_11"]
+    [Arguments]  @{atribut_value}
+    :FOR  ${categories}  IN  @{atribut_value}
+    \  Run Keyword If  '${categories}' == 'tops'  Click Button  id=layered_category_4
+    \  Run Keyword If  '${categories}' == 'dresses'  Click Button  id=layered_category_8
+    \  Run Keyword If  '${categories}' == 'casual dresses'  Click Button  id=layered_category_9
+    \  Run Keyword If  '${categories}' == 'evening dresses'  Click Button  id=layered_category_10
+    \  Run Keyword If  '${categories}' == 'summer dresses'  Click Button  id=layered_category_11
 
 Set Size Checkbox
-    [Arguments]  @{size}
-    Click Specific Checkbox  ${size}  S  atribut_xpath=//*[@id="layered_id_attribute_group_1"]
-    Click Specific Checkbox  ${size}  M  atribut_xpath=//*[@id="layered_id_attribute_group_2"]
-    Click Specific Checkbox  ${size}  L  atribut_xpath=//*[@id="layered_id_attribute_group_3"]
+    [Arguments]  @{atribut_value}
+    :FOR  ${size}  IN  @{atribut_value}
+    \  Run Keyword If  '${size}' == 'S'  Click Button  id=layered_id_attribute_group_1
+    \  Run Keyword If  '${size}' == 'M'  Click Button  id=layered_id_attribute_group_2
+    \  Run Keyword If  '${size}' == 'L'  Click Button  id=layered_id_attribute_group_3
 
 Set Compositions Checkbox
-    [Arguments]  @{compositions}
-    Click Specific Checkbox  ${compositions}  cotton  atribut_xpath=//*[@id="layered_id_feature_5"]
-    Click Specific Checkbox  ${compositions}  polyester  atribut_xpath=//*[@id="layered_id_feature_1"]
-    Click Specific Checkbox  ${compositions}  viscose  atribut_xpath=//*[@id="layered_id_feature_3"]
+    [Arguments]  @{atribut_value}
+    :FOR  ${compositions}  IN  @{atribut_value}
+    \  Run Keyword If  '${compositions}' == 'cotton'  Click Button  id=layered_id_feature_5
+    \  Run Keyword If  '${compositions}' == 'polyester'  Click Button  id=layered_id_feature_1
+    \  Run Keyword If  '${compositions}' == 'viscose'  Click Button  id=layered_id_feature_3
 
 Set Styles Checkbox
-    [Arguments]  @{styles}
-    Click Specific Checkbox  @{styles}  casual  atribut_xpath=//*[@id="layered_id_feature_11"]
-    Click Specific Checkbox  @{styles}  dressy  atribut_xpath=//*[@id="layered_id_feature_16"]
-    Click Specific Checkbox  @{styles}  girly  atribut_xpath=//*[@id="layered_id_feature_13"]
+    [Arguments]  @{atribut_value}
+    :FOR  ${styles}  IN  @{atribut_value}
+    \  Run Keyword If  '${styles}' == 'casual'  Click Button  id=layered_id_feature_11
+    \  Run Keyword If  '${styles}' == 'dressy'  Click Button  id=layered_id_feature_16
+    \  Run Keyword If  '${styles}' == 'girly'  Click Button  id=layered_id_feature_13
 
 Set Properties Checkox
-    [Arguments]  @{properties}
-    Click Specific Checkbox  ${properties}  Colorful Dress  atribut_xpath=//*[@id="layered_id_feature_18"]
-    Click Specific Checkbox  ${properties}  Maxi Dress  atribut_xpath=//*[@id="layered_id_feature_21"]
-    Click Specific Checkbox  ${properties}  Midi Dress  atribut_xpath=//*[@id="layered_id_feature_20"]
-    Click Specific Checkbox  ${properties}  Short Dress  atribut_xpath=//*[@id="layered_id_feature_19"]
-    Click Specific Checkbox  ${properties}  Short Sleeve  atribut_xpath=//*[@id="layered_id_feature_17"]
+    [Arguments]  @{atribut_value}
+    :FOR  ${properties}  IN  @{atribut_value}
+    \  Run Keyword If  '${properties}' == 'Colorful Dress'  Click Button  id=layered_id_feature_18
+    \  Run Keyword If  '${properties}' == 'Maxi Dress'  Click Button  id=layered_id_feature_21
+    \  Run Keyword If  '${properties}' == 'Midi Dress'  Click Button  id=layered_id_feature_20
+    \  Run Keyword If  '${properties}' == 'Short Dress'  Click Button  id=layered_id_feature_19
+    \  Run Keyword If  '${properties}' == 'Short Sleeve'  Click Button  id=layered_id_feature_17
 
 Set Availability Checkbox
     [Arguments]  ${availability}
-    Click Specific Checkbox  ${availability}  In stock  atribut_xpath=//*[@id="layered_quantity_1"]
+    Run Keyword If  '${availability}' == 'In stock'  Click Button id=layered_quantity_1
 
 Set Manufacturer Checkbox
     [Arguments]  ${manufacturer}
-    Click Specific Checkbox  ${manufacturer}  Fashion Manufacturer  atribut_xpath=//*[@id="layered_manufacturer_1"]
+    Run Keyword If  '${manufacturer}' == 'Fashion Manufacturer'  Click Button  id=layered_manufacturer_1
 
 Set Condition Checkbox
     [Arguments]  ${condition}
-    Click Specific Checkbox  ${condition}  new  atribut_xpath=//*[@id="layered_condition_new"]
+    Run Keyword If  '${condition}' == 'new'  Click Button  id=layered_condition_new
 
 Set Price
     [Arguments]

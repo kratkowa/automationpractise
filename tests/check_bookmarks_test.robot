@@ -1,10 +1,11 @@
-# Add elements to basket
-# Author: Kajetan Ziółkowski
-
+# Checking bookmarks on the page
+# Autor: Patrycja Łukaszewicz
 *** Settings ***
+Documentation    Suite description
 Library  SeleniumLibrary
 Resource  ../config/global.robot
 Resource  ../resources/login/login.robot
+Resource  ../resources/bookmarks/cart.robot
 Resource  ../resources/bookmarks/women_category.robot
 Test Teardown  End Test
 
@@ -15,19 +16,15 @@ Start Test
     Go To Singin
     Login To Account  ${USERNAME}  ${PASSWORD}
 
-
-Add Product To Basket
-    [Documentation]  Add product to basket
+Check Women Category
     Go To Women Category
-    Add First Element To Cart
-
-
-Remove Products From Basket
-    [Documentation]  Go to basket. Remove existing element. Verify message text.
-    Remove One Element From Basket
-    Verify Message Text
-
+    Set Categories Chechbox  tops  dresses
+    Set Size Checkbox  S  M
+    Set Compositions Checkbox  cotton  viscose
+    Set Styles Checkbox  girly
+    Set Condition Checkbox  new
 
 End Test
     [Documentation]  Logout and close browser
+    Logout
     Close Browser

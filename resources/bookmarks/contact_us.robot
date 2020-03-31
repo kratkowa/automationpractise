@@ -4,6 +4,8 @@
 *** Settings ***
 Library  SeleniumLibrary
 Resource  ../general.robot
+Resource  ../config/global.robot
+
 
 *** Keywords ***
 Go To Contact Us
@@ -11,6 +13,11 @@ Go To Contact Us
 
 
 #Autor: Michał Kłonowski
+
+Go To Contact Us While Unlogged
+    Wait Until Element Is Enabled       xpath=/html/body/div/div[1]/header/div[2]/div/div/nav/div[2]/a
+    Click Element                       xpath=/html/body/div/div[1]/header/div[2]/div/div/nav/div[2]/a
+
 Set Customer Service in Subject Heading         #wybiera customera z boxa
     Wait Until Element Is Enabled       xpath=//*[@id="id_contact"]
     Click Element                       xpath=//*[@id="id_contact"]
@@ -31,7 +38,7 @@ Set Text Message
 Send Message
     Click Button                        xpath=//*[@id="submitMessage"]
 
-Message has been sent
+Message Has Been Sent Alert
     Page Should Contain                 text=Your message has been successfully sent to our team.
 
 Blank Message Alert
@@ -39,3 +46,7 @@ Blank Message Alert
 
 Invalid Email Alert
     Page Should Contain                 text=Invalid email address
+
+Email Address Inserted
+    Wait Until Element Is Enabled       xpath=//*[@id="email"]
+    Textfield Should Contain            xpath=//*[@id="email"]  ${USERNAME}

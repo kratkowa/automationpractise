@@ -20,7 +20,7 @@ Change Personal Information
     [Documentation]  User change personal information
     Go To Profile
     Go To My Personal Information
-    Edit Personal Information  ${NAME}  ${LASTNAME}  ${DAY}  ${MONTH}  ${PASSWORD}  ${NEW_PASSWORD}
+    Edit Personal Information  ${NAME}  ${LASTNAME}  ${DAY}  ${MONTH}  ${YEAR}  ${PASSWORD}  ${NEW_PASSWORD}
     Save Settings
 
 End Test

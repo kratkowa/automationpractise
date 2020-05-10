@@ -2,8 +2,8 @@
 # Author: Patrycja Łukaszewicz
 
 *** Variables ***
-${NAME} =  Xyz
-${LASTNAME} =  Qaz
+${NAME} =  Joe
+${LASTNAME} =  Kowalsky
 
 # Flags for days: for 1th=2, 2th=3...
 ${DAY} =  4

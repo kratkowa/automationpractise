@@ -59,7 +59,7 @@ Order Confirmation
     Element Text Should Be  xpath:/html/body/div/div[2]/div/div[3]/div/div/p/strong  Your order on My Store is complete.
     sleep  2
 
-Remove One Element From Basket
+Remove One Element From Cart
     sleep  2
     Click Element  xpath:/html/body/div/div[1]/header/div[3]/div/div/div[3]/div/a/b
     sleep  2

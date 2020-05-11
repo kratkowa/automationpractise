@@ -7,7 +7,7 @@ Resource  ../general.robot
 
 *** Keywords ***
 Go To Women Category
-    Go To Specific Menu  tab_page_xpath=/html/body/div/div[1]/header/div[3]/div/div/div[6]/ul/li[1]/a  expected_category=/html/body/div/div[2]/div/div[3]/div[2]/div[1]/div
+    Go To Specific Menu  tab_page_xpath=/html/body/div/div[1]/header/div[3]/div/div/div[6]/ul/li[1]/a  expected_category=/html/body/div/div[2]/div/div[1]/span[2]
     sleep  2
 
 Add First Element To Cart
@@ -33,7 +33,6 @@ Add Second Element To Cart
     Wait Until Element Is Visible  xpath:/html/body/div/div[1]/header/div[3]/div/div/div[3]/div
     sleep  2
 # Zamknięcie okna modalnego
-
 
 Proceed To Checkout
     sleep  2

@@ -20,7 +20,7 @@ Login To Account
 Logout
     [Arguments]
     Click Element  xpath=/html/body/div/div[1]/header/div[2]/div/div/nav/div[2]/a
-    Wait Until Page Contains  Authentication  10
+    Wait Until Page Contains  Authentication  20
 
 End Test
     Run Keyword If Test Failed  Logout

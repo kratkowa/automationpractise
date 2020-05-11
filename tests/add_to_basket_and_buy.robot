@@ -24,7 +24,7 @@ Add Two Products To Basket
     Add Second Element To Cart
 
 Proceed To Checkout And Finalize
-    [Documentation]  Go through cechout, choose payment method and finalize transaction.
+    [Documentation]  Go through checkout, choose payment method and finalize transaction.
     Proceed To Checkout
     Choose Payment Method Bank Wire
     Order Confirmation
